@@ -1,0 +1,96 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Press Start 2P', cursive;
+}
+
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: linear-gradient(
+		to top,
+		rgba(174, 181, 156),
+		rgba(19, 104, 61)
+	);
+}
+
+.container {
+	display: flex;
+	min-height: 50vh;
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 255, 255, 0.7),
+		rgba(255, 255, 255, 0.3)
+	);
+	padding: 5rem;
+	box-shadow: 6px 6px 20px rgb(0, 0, 0, 0.5);
+    border: 10px solid black;
+}
+
+/*IMAGEM*/
+
+img {
+	width: 20rem;
+}
+
+/*PRINCIPAL*/
+
+.info {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+    justify-content: space-evenly;
+	margin-left: 4rem;
+}
+
+h1 {
+	font-size: 1.5rem;
+	padding: 0rem 0rem 0.5rem;
+}
+
+p {
+	opacity: 0.9;
+}
+
+/*INPUT*/
+
+.btns {
+	display: flex;
+	justify-content: space-between;
+    margin: 2rem;
+}
+
+button {
+	padding: 1rem 0.3rem;
+	background: rgba(255, 255, 255, 0.25);
+	color: black;
+    border: solid 3px black;
+	cursor: pointer;
+    font-size: 0.7rem;
+}
+
+button:hover {
+	transform: scale(1.2);
+    background: white;
+}
+
+.inputs {
+    display: flex;
+} 
+
+#valor {
+    padding: 1rem 1rem;
+    background: white;
+    color: black;
+    border: solid 3px black;
+    /*display: none;*/
+}
+
+
+.converter {
+    display: none;
+    padding: 1rem;
+}

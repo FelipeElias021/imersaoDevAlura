@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://i.redd.it/d9d2xitclb521.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem ;
+}
+
+h1 {
+    color: #F5F3F4;
+}
+
+p {
+    color: #F5F3F4;
+}
+
+img {
+    width: 17rem;
+    margin: 2rem;
+}
+
+button {
+    margin: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    background: #161A1D;
+    color: #E5383B;
+    border: none;
+    box-shadow: 4px 4px #0B090A;
+}
+
+button:hover {
+    background: #F5F3F4;
+    transform: scale(1.1);
+}
+
+.divs {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.divInput {
+    display: none;
+    color: #F5F3F4;
+}
+
+#poder, #dano {
+    margin: 0.5rem;
+}
+
+.divResultado {
+    color: #F5F3F4;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+}
+
+.pontos {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1rem;
+}

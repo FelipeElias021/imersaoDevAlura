@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #5a189a, #e0aaff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    background: linear-gradient(to bottom, #239a18, #aaffaa);
+
+}
+
+.wrong {
+    background: linear-gradient(to bottom, #9a1818, #ffaaaa);
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    min-height: 70vh;
+    background: linear-gradient(to left bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+    padding: 0rem 5rem;
+    text-align: center;
+    box-shadow: 6px 6px 20px rgb(0, 0, 0, 0.5);
+    border-radius: 2rem;
+    border-bottom-right-radius: 10rem;
+}
+
+p {
+    font-size: 0.9rem;
+    margin: 1rem 0rem;
+}
+
+.container h1 {
+    font-size: 1.2rem;
+    margin: 1rem 0rem;
+}
+
+input, button {
+    padding: 1rem;
+    border: 4px #5a189a solid;
+    background: white;
+}
+
+button:hover {
+    background: #5a189a;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.logo {
+    width: 20rem;
+    margin-bottom: 1rem;
+} 
+
+img {
+    width: 25rem;
+}
+
+/*MODAL*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgb(0, 0, 0);
+    background: rgb(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 800px;
+    box-shadow: 6px 6px 20px rgb(0, 0, 0, 0.5);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    margin: 2rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal-button {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content button {
+    justify-content: center;
+    width: 50%;
+
+}
+
+.invalid {
+    animation: wobble-hor-bottom 0.8s both;
+}
+
+@keyframes wobble-hor-bottom {
+    0%, 100% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+    15% {
+        -webkit-transform: translateX(-30px) rotate(-6deg);
+        transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+        -webkit-transform: translateX(15px) rotate(6deg);
+        transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+        -webkit-transform: translateX(-15px) rotate(-3.6deg);
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+        -webkit-transform: translateX(9px) rotate(2.4deg);
+        transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+        -webkit-transform: translateX(-6px) rotate(-1.2deg);
+        transform: translateX(-6px) rotate(-1.2deg);
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Tabela Classificação</title>
+	</head>
+	<body>
+		<div class="modal0">
+			<div class="modal-content0">
+				<h1>Informe o nome dos times</h1>
+				<div class="linha1">
+					<input type="text" id="txtNomeTime" />
+					<button class="adicionar">Adicionar</button>
+				</div>
+				<div class="linha2">
+					<button class="proximo">Próximo</button>
+				</div>
+				<div class="divNomes"></div>
+				<div class="divWrong"></div>
+			</div>
+		</div>
+		<div class="modal1">
+			<div class="modal-content1">
+				<h1>Qual o valor da vitória, derrota e empate?</h1>
+				<div class="linha1">
+					<input type="number" id="txtVitoria" placeholder="Vitória" />
+					<input type="number" id="txtDerrota" placeholder="Derrota" />
+					<input type="number" id="txtEmpate" placeholder="Empate" />
+				</div>
+				<div class="linha2">
+					<button class="pronto">Pronto</button>
+				</div>
+				<div class="divWrong1"></div>
+			</div>
+		</div>
+		<main>
+			<div class="tabela">
+				<table>
+					<thead>
+						<tr>
+							<th>Time</th>
+							<th>Jogos</th>
+							<th>Vitórias</th>
+							<th>Empates</th>
+							<th>Derrotas</th>
+							<th>Pontos</th>
+							<th>Resultado</th>
+						</tr>
+					</thead>
+					<tbody class="tabelaTime">
+
+                    </tbody>
+				</table>
+                <div class="pontuacoes"></div>
+			</div>
+            <div class="botoes">
+                <button class="add">Adicionar</button>
+                <button class="resetar">Resetar Pontuação</button>
+                <button class="removerTudo">Remover Tudo</button>
+            </div>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>

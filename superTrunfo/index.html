@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Super Trunfo</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Super Trunfo Bagukan</h1>
+			<button class="btnSortearCarta">Sorteie uma carta!</button>
+			<div class="divs">
+				<div class="divCarta"></div>
+				<div class="divInput">
+					<p>Escolha um ataque:</p>
+					<input type="radio" name="ataque" id="poder" value="poder" /> Poder
+					<input type="radio" name="ataque" id="dano" value="dano" /> Dano
+				</div>
+			</div>
+			<button class="jogar" disabled>Jogar!</button>
+            <div class="divResultado"></div>
+		</div>
+        <div class="pontos">
+            <p>Pontos jogador: <span class="pontosP1"></span></p>
+            <p>Pontos Máquina: <span class="pontosIA"></span></p>
+        </div>
+		<script src="script.js"></script>
+	</body>
+</html>

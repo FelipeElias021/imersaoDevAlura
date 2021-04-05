@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
+		<title>Find the Number</title>
+	</head>
+	<body>
+		<div class="modal">
+			<div class="modal-content">
+				<div class="row">
+                    <h1>Max number:</h1> 
+					<input type="number" name="txtMax" id="txtMax">
+                </div>
+				<div class="row">
+                    <h1>Chances:</h1>
+					<input type="number" name="txtChances" id="txtChances">
+                </div>
+                <div class="modal-button">
+                    <button class="go">Go!</button>
+                </div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<p>This is the Deal</p>
+			<p>The rules are very hard</p>
+			<h1 class="rules"></h1>
+			<div class="input">
+				<input type="number" id="txtNumber" />
+				<button class="check">Check</button>
+			</div>
+			<div class="output"></div>
+			<br/>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>
