@@ -9,13 +9,13 @@ const chances = document.querySelector('#txtChances');
 const box = document.querySelector('#txtNumber');
 const button = document.querySelector('.check');
 const output = document.querySelector('.output');
-const body = document.querySelector('body');
+const main = document.querySelector('main');
 
 function openModal() {
 	modal.style.display = 'block';
 	max.focus();
 }
-openModal(); 
+openModal();  
 
 go.addEventListener('click', closeModal => {
 	if (max.value > 0 && chances.value > 0) {
@@ -35,14 +35,14 @@ go.addEventListener('click', closeModal => {
 	}
 	button.addEventListener('click', e => {
 		//REMOVE THE CLASSES FOR THE BACKGROUND COLOR
-		body.classList.remove('right');
-		body.classList.remove('wrong');
+		main.classList.remove('right');
+		main.classList.remove('wrong');
 		output.innerHTML = '';
 		//VALIDATION IF THE NUMBER ADD IS BETWEEN 1 AND 14
 		if (box.value >= 1 && box.value <= parseInt(max.value)) {
 			//RIGHT PAGE
 			if (parseInt(box.value) == randomKey) {
-				body.classList.add('right');
+				main.classList.add('right');
 				output.innerHTML = '<p>You win! Congratulations</p>';
 				output.innerHTML += `<p>The number is ${randomKey}</p>`;
 				if (parseInt(box.value) == randomKey && randomKey == 13) {
@@ -82,7 +82,7 @@ go.addEventListener('click', closeModal => {
 				button.disabled = true;
 				//WRONG PAGE
 			} else {
-				body.classList.add('wrong');
+				main.classList.add('wrong');
 				output.innerHTML = `<p>You have more ${i - 1} chances!</p>`;
 				const img = document.createElement('img');
 				img.setAttribute(

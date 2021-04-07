@@ -5,9 +5,9 @@
     font-family: 'Press Start 2P', cursive;
 }
 
-body {
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #5a189a, #e0aaff);
+main {
+    min-height: 94vh;
+    background: linear-gradient(to bottom, #ff3d00, #ff9e80);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,12 +50,12 @@ p {
 
 input, button {
     padding: 1rem;
-    border: 4px #5a189a solid;
+    border: 4px #ff3d00 solid;
     background: white;
 }
 
 button:hover {
-    background: #5a189a;
+    background: #ff3d00;
     color: white;
     cursor: pointer;
     transform: scale(1.1);
@@ -68,6 +68,10 @@ button:hover {
 
 img {
     width: 25rem;
+}
+
+.again {
+    margin: 2rem;
 }
 
 /*MODAL*/

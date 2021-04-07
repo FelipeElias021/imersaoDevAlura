@@ -5,8 +5,8 @@
     font-family: 'Press Start 2P', cursive;
 }
 
-body {
-    min-height: 100vh;
+main {
+    min-height: 94vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,6 +48,10 @@ button {
     box-shadow: 4px 4px #0B090A;
 }
 
+button:disabled {
+    display: none;
+}
+
 button:hover {
     background: #F5F3F4;
     transform: scale(1.1);
@@ -64,7 +68,16 @@ button:hover {
     color: #F5F3F4;
 }
 
-#poder, #dano {
+.divInput img {
+    width: 25px;
+    margin: 0px 50px;
+}
+
+#poder img {
+    width: 15px;
+}
+
+#poder, #dano, #energia {
     margin: 0.5rem;
 }
 
@@ -80,6 +93,13 @@ button:hover {
 .pontos {
     position: absolute;
     right: 0;
-    top: 0;
-    margin: 1rem;
+    top: 6vh;
+}
+
+.pontos p {
+    margin: 0.5rem 1rem;
+}
+
+.sub-pontos {
+    margin: 2rem 0rem;
 }

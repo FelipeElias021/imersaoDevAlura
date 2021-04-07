@@ -5,38 +5,62 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="../nav-style.css">
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="https://i.pinimg.com/originals/46/8f/78/468f7826c935091acfb33c303733a0e5.png" type="image/x-icon">
 		<title>Who's that Pokemon</title>
 	</head>
 	<body>
-        <div class="modal">
-            <div class="modal-content">
-                <div class="question">
-                    <h1>Who´s that Pokemon?</h1>
-                    <input type="text" id="name">
-                    <button id="check">Check</button>
-                    <div class="wrong"></div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="card">
-                <div class="pokemon">
-                    <img src="https://cdn.bulbagarden.net/upload/thumb/9/99/282Gardevoir.png/375px-282Gardevoir.png" alt="">
-                    <div class="circle"></div>
-                </div>
-                <div class="info">
-                    <h1 class="pokemonName" id="infoName"></h1>
-                    <p>Is able to see the future using its psychic powers. Additionally, it is able to create small black holes, distort dimensions, and support itself without feeling the pull of gravity.</p>
-                    <h2><strong>Generation:</strong> <span id="gen">III</span></h2>
-                    <h2><strong>National nº:</strong> <span id="infoId">282</span></h2>
-                    <div class="types">
-                        <h2><strong>Type:</strong></h2>
-                        <h2 class="type" id="type1">Psychic</h2>
-                        <h2 class="type" id="type2">Fairy</h2>
+        <header>
+			<nav>
+				<ul class="nav-links">
+					<li><a href="../index.html">🌐 Certificard</a></li>
+					<li><a href="../conversorMoeda/index.html">💰 Conversor de moedas</a></li>
+					<li><a href="../whosThatPokemon/index.html">💮 Quem é esse Pokemon?</a></li>
+					<li><a href="../findTheNumber/index.html">🔮 Encontre o número</a></li>
+					<li><a href="../bookFlix/index.html">📙 BookFlix</a></li>
+					<li><a href="../tabelaClassificacao/index.html">🏆 Tabela</a></li>
+					<li><a href="../superTrunfo/index.html">🃏 Super Trunfo Bagukan</a></li>
+				</ul>
+				<div class="burger">
+					<div class="line1"></div>
+					<div class="line2"></div>
+					<div class="line3"></div>
+				</div>
+			</nav>
+		</header>
+        <main>
+            <div class="modal">
+                <div class="modal-content">
+                    <div class="question">
+                        <h1>Who´s that Pokemon?</h1>
+                        <input type="text" id="name">
+                        <button id="check">Check</button>
+                        <div class="wrong"></div>
                     </div>
+                </div>
             </div>
-        </div>
-        <script src="app.js"></script>
+            <div class="container">
+                <div class="card">
+                    <div class="pokemon">
+                        <img src="https://cdn.bulbagarden.net/upload/thumb/9/99/282Gardevoir.png/375px-282Gardevoir.png" alt="">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="info">
+                        <h1 class="pokemonName" id="infoName"></h1>
+                        <p>Is able to see the future using its psychic powers. Additionally, it is able to create small black holes, distort dimensions, and support itself without feeling the pull of gravity.</p>
+                        <h2><strong>Generation:</strong> <span id="gen">III</span></h2>
+                        <h2><strong>National nº:</strong> <span id="infoId">282</span></h2>
+                        <div class="types">
+                            <h2><strong>Type:</strong></h2>
+                            <h2 class="type" id="type1">Psychic</h2>
+                            <h2 class="type" id="type2">Fairy</h2>
+                        </div>
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+        <script src="../nav-app.js"></script>
     </body>
 </html>

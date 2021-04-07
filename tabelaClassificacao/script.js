@@ -8,7 +8,7 @@ const modal1 = document.querySelector('.modal1');
 const modalContent1 = document.querySelector('.modal-content1');
 const valorVitoria = document.querySelector('#txtVitoria');
 const valorDerrota = document.querySelector('#txtDerrota');
-const valorEmpate = document.querySelector('#txtEmpate');
+const valorEmpate = document.querySelector('#txtEmpate'); 
 
 //TABELA ONDE OS TIMES VÃO FICAR
 const tabelaTime = document.querySelector('.tabelaTime')

@@ -4,28 +4,56 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@600&display=swap" rel="stylesheet"
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@600&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="../nav-style.css" />
+		<link rel="shortcut icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/orange-book_1f4d9.png" type="image/x-icon">
 		<title>BookFlix</title>
-	</head> 
+	</head>
 	<body>
-		<div class="container">
-			<h1 class="title">BookFlix</h1>
-			<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="logo"/>
-			<div class="input">
-				<input type="text" id="txtname" placeholder="Name">
-				<input type="text" id="txtlink" placeholder="Book Cover Link">
-				<button id="add">Add</button>
-				<button id="reset">Reset</button>
+		<header>
+			<nav>
+				<ul class="nav-links">
+					<li><a href="../index.html">🌐 Certificard</a></li>
+					<li><a href="../conversorMoeda/index.html">💰 Conversor de moedas</a></li>
+					<li><a href="../whosThatPokemon/index.html">💮 Quem é esse Pokemon?</a></li>
+					<li><a href="../findTheNumber/index.html">🔮 Encontre o número</a></li>
+					<li><a href="../bookFlix/index.html">📙 BookFlix</a></li>
+					<li><a href="../tabelaClassificacao/index.html">🏆 Tabela</a></li>
+					<li><a href="../superTrunfo/index.html">🃏 Super Trunfo Bagukan</a></li>
+				</ul>
+				<div class="burger">
+					<div class="line1"></div>
+					<div class="line2"></div>
+					<div class="line3"></div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+				<h1 class="title">BookFlix</h1>
+				<img
+					src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg"
+					class="logo"
+				/>
+				<div class="input">
+					<input type="text" id="txtname" placeholder="Name" />
+					<input type="text" id="txtlink" placeholder="Book Cover Link" />
+					<button id="add">Add</button>
+					<button id="reset">Reset</button>
+				</div>
+				<div class="suggestions" id="file"></div>
+				<div class="output" id="file"></div>
 			</div>
-			<div class="suggestions" id="file">
-			</div>
-			<p class="title-suggestion">Suggestions</p>
-            <div class="output" id="file">
-
-            </div>
-		</div>
+		</main>
+		<script src="script.js"></script>
+		<script src="../nav-app.js"></script>
 	</body>
-	<script src="app.js"></script>
 </html>

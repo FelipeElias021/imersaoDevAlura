@@ -5,32 +5,66 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
-		<link
+		<link rel="stylesheet" href="../nav-style.css">
+		<link rel="shortcut icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/playing-card-black-joker_1f0cf.png" type="image/x-icon">
+		<link 
 			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
 			rel="stylesheet"
 		/>
-
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 		<title>Super Trunfo</title>
 	</head>
-	<body>
-		<div class="container">
-			<h1>Super Trunfo Bagukan</h1>
-			<button class="btnSortearCarta">Sorteie uma carta!</button>
-			<div class="divs">
-				<div class="divCarta"></div>
-				<div class="divInput">
-					<p>Escolha um ataque:</p>
-					<input type="radio" name="ataque" id="poder" value="poder" /> Poder
-					<input type="radio" name="ataque" id="dano" value="dano" /> Dano
+	<body> 
+		<header>
+			<nav>
+				<ul class="nav-links">
+					<li><a href="../index.html">🌐 Certificard</a></li>
+					<li><a href="../conversorMoeda/index.html">💰 Conversor de moedas</a></li>
+					<li><a href="../whosThatPokemon/index.html">💮 Quem é esse Pokemon?</a></li>
+					<li><a href="../findTheNumber/index.html">🔮 Encontre o número</a></li>
+					<li><a href="../bookFlix/index.html">📙 BookFlix</a></li>
+					<li><a href="../tabelaClassificacao/index.html">🏆 Tabela</a></li>
+					<li><a href="../superTrunfo/index.html">🃏 Super Trunfo Bagukan</a></li>
+				</ul>
+				<div class="burger">
+					<div class="line1"></div>
+					<div class="line2"></div>
+					<div class="line3"></div>
 				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container">
+				<h1>Super Trunfo Bagukan</h1>
+				<button class="SortearCarta" onclick="sortearCartasFunc()">Sorteie uma carta!</button>
+				<div class="divs">
+					<div class="divCarta"></div>
+					<div class="divInput">
+						<p>Escolha um ataque:</p>
+						<input type="radio" name="ataque" id="poder" value="poder" /> Poder &uparrow; 
+						<input type="radio" name="ataque" id="dano" value="dano" /> Dano &uparrow; 
+						<input type="radio" name="ataque" id="energia" value="energia" /> Energia &downarrow; 
+						<br>
+						<img src="https://bakugan.wiki/images/thumb/d/d1/Icon-power.png/15px-Icon-power.png" alt="B">
+						<img src="https://bakugan.wiki/images/thumb/7/7f/Icon-damage.png/25px-Icon-damage.png" alt="punho">
+						<img src="https://bakugan.wiki/images/thumb/8/80/Battle_Planet_Energy_Symbol.png/25px-Battle_Planet_Energy_Symbol.png" alt="Raio">
+					</div>
+				</div>
+				<button class="jogar" onclick="jogarFunc()" disabled>Jogar!</button>
+						<div class="divResultado"></div>
 			</div>
-			<button class="jogar" disabled>Jogar!</button>
-            <div class="divResultado"></div>
-		</div>
-        <div class="pontos">
-            <p>Pontos jogador: <span class="pontosP1"></span></p>
-            <p>Pontos Máquina: <span class="pontosIA"></span></p>
-        </div>
+					<div class="pontos">
+						<div class="sub-pontos">
+							<p>Pontos jogador: <span class="pontosP1"></span> / <span class="pontosTotaisP1"></span></p>
+							<p>Pontos Máquina: <span class="pontosIA"></span> / <span class="pontosTotaisIA"></span></p>
+						</div>
+						<div class="sub-pontos">
+							<p>Cartas jogador: <span class="nCartasP1"></span></p>
+							<p>Cartas Máquina: <span class="nCartasIA"></span></p>
+						</div>
+					</div>
+		</main>
 		<script src="script.js"></script>
+		<script src="../nav-app.js"></script>
 	</body>
 </html>

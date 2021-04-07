@@ -9,7 +9,7 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
+	min-height: 94vh;
 	background: linear-gradient(
 		to top,
 		rgba(174, 181, 156),
