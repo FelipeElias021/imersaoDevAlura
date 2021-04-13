@@ -659,6 +659,20 @@ const cardVentusTitanTrox = {
     }
 }
 
+let audioFlipCard = new Audio("https://freesound.org/data/previews/536/536782_1415754-lq.mp3");
+
+//MODAL
+const modal = document.querySelector('.modal');
+const inputModal = document.querySelector('#qtdCartas')
+
+function openModal() {
+    modal.style.display = 'block'
+    inputModal.value = ''
+    inputModal.focus()
+    document.querySelector('.valorNulo').innerHTML = ''
+}
+openModal()
+
 //CRIANDO VARIÁVEIS PARA AS CARTAS
 let cartas
 let cartasP1
@@ -680,9 +694,25 @@ const spanPontosIA = document.querySelector('.pontosIA')
 const spanPontosTotaisIA = document.querySelector('.pontosTotaisIA')
 
 //PRINCIPAIS DIVS
-const divCarta = document.querySelector('.divCarta')
+const divCartaP1 = document.querySelector('.divCartaP1')
+const divCartaIA = document.querySelector('.divCartaIA')
 const divInput = document.querySelector('.divInput')
 const divResultado = document.querySelector('.divResultado')
+
+function comecarFunc() {
+    if (inputModal.value != '' && inputModal.value > 0 && inputModal.value <= 33) {
+        modal.style.display = 'none'
+        SortearCarta.disabled = false;
+        divCartaP1.innerHTML += `<img src='https://i.colnect.net/f/2621/178/Doom-Card-back.jpg'>`
+        divCartaIA.innerHTML += `<img src='https://i.colnect.net/f/2621/178/Doom-Card-back.jpg'>`
+        atualizarPlacar()
+        sortearBaralho(inputModal.value)
+    } else {
+        document.querySelector('.valorNulo').innerHTML = '<p>Por favor informe uma quantidade de cartas válidas no deck</p>'
+        inputModal.focus()
+        inputModal.value = ''
+    }
+}
 
 function atualizarPlacar() {
     spanPontosP1.innerHTML = `${pontosP1}`
@@ -690,17 +720,16 @@ function atualizarPlacar() {
     spanPontosTotaisP1.innerHTML = `${pontosTotaisP1}`
     spanPontosTotaisIA.innerHTML = `${pontosTotaisIA}`
 }
-atualizarPlacar()
 
 function atualizarBaralho() {
     spanCartasP1.innerHTML = baralhoP1.length
     spanCartasIA.innerHTML = baralhoIA.length
 }
 
-function sortearBaralho() {
+function sortearBaralho(x) {
     let cartas = [cardDiamondHydorous, cardDiamondHydorousUltra, cardDiamondSerpenteze, cardAquosHyperPegatrix, cardAquosHyperFangzor, cardAquosHyperHydorous, cardAquosHyperHydorousUltra, cardAquosHyperMantonoidUltra, cardAquosHyperSerpentezeUltra, cardAquosHyperTrox, cardAquosTitanGarganoidUltra, cardAquosTitanDragonoid, cardAquosMaximusHydorousUltra, cardAurelusHyperDragonoid, cardAurelusHyperHowlkorUltra, cardAurelusHyperMaxotaurUltra, cardAurelusHyperNillious, cardAurelusHyperPegatrix, cardAurelusHyperGarganoidUltra, cardAurelusTitanFangzor, cardAurelusTitanHydorous, cardDiamondGarganoidUltra, cardDiamondNillious, cardDarkusHyperDragonoid, cardDarkusHyperFangzor, cardDarkusHyperHydorous, cardDarkusHyperHydorousUltra,cardDarkusHyperTrox, cardDarkusHyperNillious, cardDarkusTitanHowlkorUltra, cardDarkusTitanMantonoidUltra, cardDarkusTitanNillious, cardDiamondGorthionUltra, cardDiamondPegatrix, cardHaosHyperFangzor, cardHaosHyperGarganoidUltra, cardHaosHyperNillious, cardHaosHyperHydorousUltra, cardHaosHyperSerpentezeUltra, cardHaosMaximusHydorousUltra, cardHaosTitanHowlkorUltra, cardHaosTitanNillious, cardHaosTitanPegatrix, cardDiamondDragonoid, cardDiamondFangzor, cardPyrusHyperHydorous, cardPyrusHyperHydorousUltra, cardPyrusHyperMaxotaurUltra, cardPyrusHyperTrox, cardPyrusHyperDragonoid, cardPyrusHyperMantonoidUltra, cardPyrusHyperSerpentezeUltra, cardPyrusTitanFangzor, cardPyrusTitanHydorousUltra, cardPyrusTitanDragonoid, cardDiamondMaxotaurUltra, cardDiamondTrox, cardDiamondTroxUltra, cardVentusHyperDragonoid, cardVentusHyperFangzor, cardVentusHyperNillious, cardVentusHyperPegatrix, cardVentusHyperMantonoidUltra, cardVentusTitanHowlkorUltra, cardVentusTitanMaxotaurUltra, cardVentusTitanTrox]
     baralhoP1 = cartas
-    for (let i = 1; i <= (cartas.length); i++) {
+    for (let i = 1; i <= (x); i++) {
         const indexBaralhoIA = parseInt(Math.random() * cartas.length)
         for (let c in baralhoIA) {
             while (baralhoIA[c] == cartas[indexBaralhoIA]) {
@@ -710,9 +739,10 @@ function sortearBaralho() {
         baralhoIA.push(cartas[indexBaralhoIA])
         baralhoP1.splice(indexBaralhoIA, 1)
     }
+    const delet = baralhoP1.length-x
+    baralhoP1.splice(0, delet)
     atualizarBaralho()
 }
-sortearBaralho()
 
 const SortearCarta = document.querySelector('.SortearCarta')
 function sortearCartasFunc() {
@@ -733,7 +763,8 @@ function sortearCartasFunc() {
 
 function mostrarOpcoes() {
     //MOSTRAR A CARTA E O INPUT RADIO TYPE
-    divCarta.innerHTML = `<img src='${cartasP1.card}'>`
+    audioFlipCard.play()
+    divCartaP1.innerHTML = `<img src='${cartasP1.card}'>`
     divInput.style.display = 'block'
 }
 
@@ -750,6 +781,13 @@ function ataqueSelecionado() {
     }
 }
 
+function escolhaIA() {
+    let atk = [poder, dano, energia]
+    let indexAtk = parseInt(Math.random() * atk.length)
+    let atkIA = atk[indexAtk]
+    return atkIA
+}
+
 const jogar = document.querySelector('.jogar')
 function jogarFunc() {
     //RETORNAR A FUNÇÃO QUE SELECIONA OS ATAQUES
@@ -763,6 +801,8 @@ function jogarFunc() {
             if (cartasP1.ataques[ataqueMarcado] > cartasIA.ataques[ataqueMarcado]) {
                 divResultado.innerHTML += `<h2>Você Ganhou</h2>`
                 divResultado.innerHTML += `<h2>Seu ${ataqueMarcado} de ${cartasP1.ataques[ataqueMarcado]} bateu os ${cartasIA.ataques[ataqueMarcado]} do ${cartasIA.nome}</h2>`
+                divCartaIA.style.transform = 'scale(0.8)'
+                divCartaIA.style.filter = 'contrast(0.5)'
                 //ADICIONA OS PONTOS E MUDA EM CIMA
                 pontosP1++
                 atualizarPlacar()
@@ -772,6 +812,8 @@ function jogarFunc() {
             } else if (cartasP1.ataques[ataqueMarcado] < cartasIA.ataques[ataqueMarcado]) {
                 divResultado.innerHTML += `<h2>Você Perdeu</h2>`
                 divResultado.innerHTML += `<h2>Seu ${ataqueMarcado} de ${cartasP1.ataques[ataqueMarcado]} não foi capaz de aniquilar os ${cartasIA.ataques[ataqueMarcado]} do ${cartasIA.nome}</h2>`
+                divCartaP1.style.transform = 'scale(0.8)'
+                divCartaP1.style.filter = 'contrast(0.5)'
                 //ADICIONA OS PONTOS E MUDA EM CIMA
                 pontosIA++
                 atualizarPlacar()
@@ -790,6 +832,8 @@ function jogarFunc() {
             if (cartasP1.ataques[ataqueMarcado] < cartasIA.ataques[ataqueMarcado]) {
                 divResultado.innerHTML += `<h2>Você Ganhou</h2>`
                 divResultado.innerHTML += `<h2>Você foi mais econômico com sua ${ataqueMarcado}, ${cartasP1.ataques[ataqueMarcado]} contra ${cartasIA.ataques[ataqueMarcado]} do ${cartasIA.nome}</h2>`
+                divCartaIA.style.transform = 'scale(0.8)'
+                divCartaIA.style.filter = 'contrast(0.5)'
                 //ADICIONA OS PONTOS E MUDA EM CIMA
                 pontosP1++
                 atualizarPlacar()
@@ -799,6 +843,8 @@ function jogarFunc() {
             } else if (cartasP1.ataques[ataqueMarcado] > cartasIA.ataques[ataqueMarcado]) {
                 divResultado.innerHTML += `<h2>Você Perdeu</h2>`
                 divResultado.innerHTML += `<h2>Você gastou mais ${ataqueMarcado}, ${cartasP1.ataques[ataqueMarcado]} contra ${cartasIA.ataques[ataqueMarcado]} do ${cartasIA.nome}</h2>`
+                divCartaP1.style.transform = 'scale(0.8)'
+                divCartaP1.style.filter = 'contrast(0.5)'
                 //ADICIONA OS PONTOS E MUDA EM CIMA
                 pontosIA++
                 atualizarPlacar()
@@ -818,7 +864,8 @@ function jogarFunc() {
         //ESCONDE OS INPUTS RADIO TYPE
         divInput.style.display = 'none'
         //MOSTRA A CARTA DA MÁQUINA
-        divCarta.innerHTML += `<img src='${cartasIA.card}'>`
+        audioFlipCard.play()
+        divCartaIA.innerHTML = `<img src='${cartasIA.card}'>`
         //DESABILITA O BOTÃO DE JOGAR
         jogar.disabled = true;
         if (baralhoIA == 0) {
@@ -837,29 +884,49 @@ function jogarFunc() {
     }
 }
 
+let indice = 1
 function sortearDenovo() {
-    //DESABILITA O BOTÃO DE JOGAR E HABILITAR DE SORTEAR CARTA
-    jogar.disabled = true;
     //APAGA TODAS AS DIVS
-    divCarta.innerHTML = ``
+    divCartaIA.style.transform = 'scale(1)'
+    divCartaP1.style.transform = 'scale(1)'
+    divCartaIA.style.filter = 'contrast(1)'
+    divCartaP1.style.filter = 'contrast(1)'
+    divCartaP1.innerHTML = ``
+    divCartaIA.innerHTML = ``
     divResultado.innerHTML = ``
     divInput.style.display = 'none'
     divResultado.style.background = 'none'
+    //DESABILITA O BOTÃO DE JOGAR E HABILITAR DE SORTEAR CARTA
+    jogar.disabled = true;
     sortearCartasFunc()
+    if (indice % 2 == 0) {
+    divCartaIA.innerHTML = `<img src='https://i.colnect.net/f/2621/178/Doom-Card-back.jpg'>`
+    } else {
+        escolhaIA()
+        divInput.style.display = 'none'
+        divCartaIA.innerHTML = `<img src='${cartasIA.card}'>`
+        jogarFunc()
+    }
+    indice++
 }
 
 function resetar() {
+    openModal()
     SortearCarta.disabled = false;
     jogar.disabled = true;
-    divCarta.innerHTML = ``
+    divCartaP1.innerHTML = ``
+    divCartaIA.innerHTML = ``
     divResultado.innerHTML = ``
     divInput.style.display = 'none'
     divResultado.style.background = 'none'
     pontosP1 = 0
     pontosIA = 0
+    divCartaIA.style.transform = 'scale(1)'
+    divCartaP1.style.transform = 'scale(1)'
+    divCartaIA.style.filter = 'contrast(1)'
+    divCartaP1.style.filter = 'contrast(1)'
     atualizarPlacar()
     baralhoIA = []
-    sortearBaralho()
     atualizarBaralho()
     console.log(baralhoIA)
     console.log(baralhoP1)

@@ -33,12 +33,25 @@
 				</div>
 			</nav>
 		</header>
+		<div class="modal">
+			<div class="modal-content">
+				<h1>Qual a quantidade de cartas no deck?</h1>
+				<div class="input">
+					<input type="number" id="qtdCartas" placeholder="Máximo: 33">
+					<button class="comecar" onclick="comecarFunc()">Começar</button>
+				</div>
+				<div class="valorNulo"></div>
+			</div>
+		</div>
 		<main>
 			<div class="container">
 				<h1>Super Trunfo Bagukan</h1>
-				<button class="SortearCarta" onclick="sortearCartasFunc()">Sorteie uma carta!</button>
+				<button class="SortearCarta" onclick="sortearCartasFunc()" dis>Sorteie uma carta!</button>
 				<div class="divs">
-					<div class="divCarta"></div>
+					<div class="divCarta">
+						<div class="divCartaP1"></div>
+						<div class="divCartaIA"></div>
+					</div>
 					<div class="divInput">
 						<p>Escolha um ataque:</p>
 						<input type="radio" name="ataque" id="poder" value="poder" /> Poder &uparrow; 
